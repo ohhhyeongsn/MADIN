@@ -12,7 +12,7 @@ We recommend using Conda to manage your environment:
 conda create -n mkMADIN python=3.10 -y
 conda activate mkMADIN
 
-Install PyTorch (matching your CUDA version)
+#Install PyTorch (matching your CUDA version)
 
 pip install -r requirements.txt
 ```
@@ -57,7 +57,7 @@ Adjust the paths in `config/config.yaml` to match your local directory structure
 ---
 
 ## 🏋️ Training
->
+
 > Currently, this implementation supports **256x256 resolution** only.
 
 To start training the model, use the `train.py` script:
@@ -91,18 +91,6 @@ python "demo .py" --image ./input_folder --checkpoint (path/to/pth) --output ./o
 # Process all images matching them with masks in another folder
 python "demo .py" --image ./input_folder --mask ./mask_folder --checkpoint (path/to/pth) --output ./output_folder
 ```
-
----
-
-## ⚙️ Configuration (`config.yaml`)
-
-Key parameters in the configuration file:
-
-- `img_size`: Resolution of input image.
-- `batch_size`: Adjusted for VRAM usage (recommended: 2 or 4 for 256x256 resolution).
-- `lambdas`: Weights for L1, Perceptual, Style, and Adversarial losses.
-
----
 
 ## 📝 Citation
 
