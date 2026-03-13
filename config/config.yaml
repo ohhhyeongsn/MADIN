@@ -1,0 +1,24 @@
+paths:
+  train_image_path : "/mnt/hdd/datasets/CelebA-HQ-img/train"
+  val_image_path : "/mnt/hdd/datasets/CelebA-HQ-img/val"
+  eval_mask_path : "/mnt/hdd/datasets/masks/eval_masks/celeba/mask_large"
+  checkpoint_save_path : "result/checkpoints/"
+  img_out_path : "result/image/"
+
+hyper_p:
+  img_size : 256
+  batch_size : 3
+  num_epochs : 200
+    
+lambdas :
+    lambda_L1: 1
+    lambda_GAN: 0.1
+    lambda_Per: 0.1
+    lambda_S: 250
+
+opt_p :
+    beta_1: 0.5
+    beta_2: 0.9
+    weight_decay: 0
+    learning_rate_G: 0.0001
+    learning_rate_D: 0.0001
