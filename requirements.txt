@@ -2,8 +2,6 @@ einops==0.8.1
 matplotlib==3.10.0
 pillow==11.1.0
 PyYAML==6.0.2
-# torch==2.5.1
-# torchaudio==2.5.1
-# torchmetrics==1.7.0
-# torchvision==0.20.1
+torch==2.5.1
+
 

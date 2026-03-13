@@ -2,9 +2,6 @@
 
 Official implementation of ["Learning Mask-Aware Offsets: Two-branch Deformable Attention Networks for Inpainting with Masked Region Avoidance"](https://openaccess.thecvf.com/content/WACV2026/html/Oh_Learning_Mask-Aware_Offsets_Two-branch_Deformable_Attention_Networks_for_Inpainting_with_WACV_2026_paper.html), accepted at **WACV 2026**.
 
-> [!NOTE]
-> Currently, this implementation supports **256x256 resolution** only.
-
 ## 🛠 Installation
 
 ### 1. Environment Setup
@@ -35,10 +32,8 @@ pip install -r requirements.txt
 
 You can download the pretrained checkpoints from the following links:
 
-- [CelebA-HQ (epoch_200.pth)](YOUR_LINK_HERE)
-- [Places2 (Coming soon)](YOUR_LINK_HERE)
-
-Place the downloaded `.pth` files in the root directory or a `checkpoints/` folder.
+- [CelebA-HQ](https://drive.google.com/file/d/16om30aVwsm1RGscF6supd-mokW3T7hJi/view?usp=sharing)
+- [Places2](https://drive.google.com/file/d/1cfwh-DlUkwg6PwPqrp400vrmgdWKMj9O/view?usp=sharing)
 
 ---
 
@@ -62,6 +57,8 @@ Adjust the paths in `config/config.yaml` to match your local directory structure
 ---
 
 ## 🏋️ Training
+>
+> Currently, this implementation supports **256x256 resolution** only.
 
 To start training the model, use the `train.py` script:
 
@@ -82,17 +79,17 @@ You can run inference on a single image or an entire folder using `demo .py`.
 ### Single Image with Manual Mask
 
 ```bash
-python "demo .py" --image ./sample.jpg --mask ./mask.png --checkpoint ./epoch_200.pth --output result.png
+python "demo .py" --image ./sample.jpg --mask ./mask.png --checkpoint (path/to/pth) --output result.png
 ```
 
 ### Folder-wise Processing (Batch Inference)
 
 ```bash
 # Process all images in a folder with random masks
-python "demo .py" --image ./input_folder --checkpoint ./epoch_200.pth --output ./output_folder
+python "demo .py" --image ./input_folder --checkpoint (path/to/pth) --output ./output_folder
 
 # Process all images matching them with masks in another folder
-python "demo .py" --image ./input_folder --mask ./mask_folder --checkpoint ./epoch_200.pth --output ./output_folder
+python "demo .py" --image ./input_folder --mask ./mask_folder --checkpoint (path/to/pth) --output ./output_folder
 ```
 
 ---
@@ -101,7 +98,7 @@ python "demo .py" --image ./input_folder --mask ./mask_folder --checkpoint ./epo
 
 Key parameters in the configuration file:
 
-- `img_size`: Resolution stages for the tiered architecture (e.g., [256, 128, 64, 32]).
+- `img_size`: Resolution of input image.
 - `batch_size`: Adjusted for VRAM usage (recommended: 2 or 4 for 256x256 resolution).
 - `lambdas`: Weights for L1, Perceptual, Style, and Adversarial losses.
 
