@@ -9,8 +9,8 @@ Official implementation of ["Learning Mask-Aware Offsets: Two-branch Deformable 
 We recommend using Conda to manage your environment:
 
 ```bash
-conda create -n mkMADIN python=3.10 -y
-conda activate mkMADIN
+conda create -n MADIN python=3.10 -y
+conda activate MADIN
 
 #Install PyTorch (matching your CUDA version)
 
@@ -63,7 +63,7 @@ Adjust the paths in `config/config.yaml` to match your local directory structure
 To start training the model, use the `train.py` script:
 
 ```bash
-conda activate mkMADIN
+conda activate MADIN
 python train.py
 ```
 
