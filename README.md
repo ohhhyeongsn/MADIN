@@ -2,6 +2,9 @@
 
 Official implementation of ["Learning Mask-Aware Offsets: Two-branch Deformable Attention Networks for Inpainting with Masked Region Avoidance"](https://openaccess.thecvf.com/content/WACV2026/html/Oh_Learning_Mask-Aware_Offsets_Two-branch_Deformable_Attention_Networks_for_Inpainting_with_WACV_2026_paper.html), accepted at **WACV 2026**.
 
+> [!NOTE]
+> Currently, this implementation supports **256x256 resolution** only.
+
 ## 🛠 Installation
 
 ### 1. Environment Setup
